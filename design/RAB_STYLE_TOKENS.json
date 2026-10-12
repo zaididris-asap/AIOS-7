@@ -1,0 +1,239 @@
+{
+  "version": "0.1.0-rc",
+  "description": "Semantic design tokens for prompting and supported native controls; not CSS that overrides ChatGPT.",
+  "principles": {
+    "accuracy_first": true,
+    "functional_controls_only": true,
+    "adaptive_density": true,
+    "no_forced_gamification": true,
+    "mobile_first": true
+  },
+  "spacing": {
+    "unit": "4pt",
+    "compact": 2,
+    "standard": 3,
+    "expanded": 4
+  },
+  "typography": {
+    "title": "smallest readable title establishing hierarchy",
+    "body": "native platform text size",
+    "caption": "smaller than body; for evidence/status only",
+    "font": "native platform font; cannot force custom webfonts"
+  },
+  "status": {
+    "proposed": "neutral",
+    "preliminary": "warning",
+    "verified": "success only with evidence",
+    "blocked": "warning/danger according to severity"
+  },
+  "visual_rules": [
+    "Avoid colorful summary boxes and ornamental gradients",
+    "Do not use badge colors for ordinary metadata",
+    "Use layouts for meaning, not novelty",
+    "Use no more than one primary action per small card when possible",
+    "Never rely on color alone"
+  ],
+  "profiles": [
+    {
+      "id": "editorial",
+      "name": "Editorial Precision",
+      "purpose": "Legal, research, contracts, high-stakes review",
+      "density": "medium",
+      "hierarchy": [
+        "Answer",
+        "Evidence",
+        "Decisions",
+        "Next action"
+      ],
+      "patterns": [
+        "Evidence Lens",
+        "Clause Review",
+        "Decision Card"
+      ],
+      "feedback": "factual",
+      "motion": "none",
+      "constraints": [
+        "No decorative color badges",
+        "Show provenance and status",
+        "Avoid excessive nested cards"
+      ]
+    },
+    {
+      "id": "focus",
+      "name": "Quiet Momentum",
+      "purpose": "Task initiation, ADHD-friendly focus when explicitly opted in",
+      "density": "low",
+      "hierarchy": [
+        "Current action",
+        "Next action",
+        "Progress",
+        "Optional full plan"
+      ],
+      "patterns": [
+        "ND-01 Activation",
+        "ND-02 Momentum",
+        "ND-05 Return Dock"
+      ],
+      "feedback": "specific, calm",
+      "motion": "none",
+      "constraints": [
+        "No gamified streaks",
+        "No unsolicited celebration",
+        "No neurochemical claims",
+        "User can pause or stop"
+      ]
+    },
+    {
+      "id": "studio",
+      "name": "Product Studio",
+      "purpose": "Product design, UX and software decisions",
+      "density": "medium-high",
+      "hierarchy": [
+        "Prototype",
+        "Alternatives",
+        "Constraints",
+        "Acceptance"
+      ],
+      "patterns": [
+        "Decision Card",
+        "Scenario Comparison",
+        "Prototype Inspector"
+      ],
+      "feedback": "specific",
+      "motion": "subtle only if native",
+      "constraints": [
+        "No decorative dashboards",
+        "Every control functional",
+        "Differentiate simulated and executed"
+      ]
+    },
+    {
+      "id": "signal",
+      "name": "Signal Dashboard",
+      "purpose": "Metric-based analysis and multi-option comparisons",
+      "density": "medium",
+      "hierarchy": [
+        "Key findings",
+        "Chart/Table",
+        "Controls",
+        "Assumptions"
+      ],
+      "patterns": [
+        "Metric Cards",
+        "Chart",
+        "Sensitivity Explorer"
+      ],
+      "feedback": "neutral",
+      "motion": "none",
+      "constraints": [
+        "No charts without data",
+        "Units and sources required",
+        "Uncertainty visible"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "RAB-STYLE-01",
+      "name": "Decision Lens",
+      "profiles": [
+        "editorial",
+        "studio"
+      ],
+      "trigger": "Single consequential choice with 2–4 alternatives",
+      "primitive_map": [
+        "U01",
+        "U03",
+        "U04",
+        "U05",
+        "U06",
+        "U07"
+      ],
+      "controls": [
+        "radio-group or pressables",
+        "request analysis button"
+      ],
+      "states": [
+        "UNSELECTED",
+        "PRELIMINARY",
+        "REVIEW_REQUESTED"
+      ],
+      "fallback": "Numbered alternatives and a one-line selection syntax"
+    },
+    {
+      "id": "RAB-STYLE-02",
+      "name": "Quiet Action Surface",
+      "profiles": [
+        "focus"
+      ],
+      "trigger": "Explicit Focus Mode with task-starting friction",
+      "primitive_map": [
+        "U01",
+        "U02",
+        "U03",
+        "U04",
+        "U06",
+        "U07"
+      ],
+      "controls": [
+        "mark self-reported complete",
+        "show full plan",
+        "pause"
+      ],
+      "states": [
+        "READY",
+        "USER_REPORTED",
+        "PAUSED",
+        "COMPLETE_USER_REPORTED"
+      ],
+      "fallback": "One next step and optional full plan"
+    },
+    {
+      "id": "RAB-STYLE-03",
+      "name": "Evidence Fold",
+      "profiles": [
+        "editorial",
+        "signal"
+      ],
+      "trigger": "Claims requiring inspection or competing evidence",
+      "primitive_map": [
+        "U03",
+        "U05",
+        "U06"
+      ],
+      "controls": [
+        "expand details when available"
+      ],
+      "states": [
+        "COLLAPSED",
+        "EXPANDED"
+      ],
+      "fallback": "Citations and compact caveats"
+    },
+    {
+      "id": "RAB-STYLE-04",
+      "name": "Return Dock",
+      "profiles": [
+        "focus",
+        "studio"
+      ],
+      "trigger": "Known previous task and user asks to resume",
+      "primitive_map": [
+        "U01",
+        "U02",
+        "U06",
+        "U07"
+      ],
+      "controls": [
+        "resume",
+        "copy handoff"
+      ],
+      "states": [
+        "CONTEXT_AVAILABLE",
+        "CONTEXT_PARTIAL",
+        "MISSING"
+      ],
+      "fallback": "Last supported state, blocker, next action"
+    }
+  ]
+}
