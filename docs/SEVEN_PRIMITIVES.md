@@ -1,4 +1,4 @@
-# Universal Seven RAB Primitives — Specification v1.0-RC
+# Universal Seven RAB Primitives — Specification v1.0-RC.1
 
 ## Core architecture
 
@@ -6,13 +6,17 @@ AIOS-7 standardizes **seven semantic functions** rather than seven mandatory vis
 
 | ID | Trigger | Inputs | Output or interaction | Fallback |
 |---|---|---|---|---|
-| U01 Identity Header | Named task, project or status | Topic, scope, revision, status | Header with task context | Inline heading |
+| U01 Identity Header | Every substantive task (AIOS-P01), plus named project/status | Topic, scope, revision, status, professional role and disciplines | Compact role declaration with task context | One short inline role line |
 | U02 Orientation Navigator | Multi-section or staged content | Sections, steps, order | Tabs, navigation, stepper | Brief outline |
 | U03 Core Answer Surface | Every task | Task-relevant facts and result | Substantive answer/artifact | Direct prose |
 | U04 Interaction Controller | Meaningful user control | Options, bounds, change events | Stateful selection, filtering, editing | Short reply syntax |
 | U05 Evidence & Integrity Lens | Contested facts or consequential claims | Sources, assumptions, uncertainty | Traceable evidence display | Citations and caveats |
 | U06 State & Progress Ledger | Decisions, approvals and actions | State, actor, evidence | Distinct proposed/approved/executed/verified statuses | Explicit status line |
 | U07 Continuation & Recovery Dock | Useful next step or inability to render RAB | Available action, context | Working follow-up/copy/handoff | Copyable prompt |
+
+## Mandatory cross-cutting professional-role protocol
+
+AIOS-P01 requires a precise simulated professional role declaration before every substantive contribution; a task-specific virtual disciplinary team is used when justified. The output must match elite institutional standards while separating aspirational design from actual capabilities, permissions, credentials and verified execution. For simple questions, use one concise role line, not a ceremonial header. This is a **cross-cutting behavior mapped to U01/U03/U05/U06**, not an additional eighth primitive. Full approved wording and tests: [AIOS-P01](AIOS-P01.md).
 
 ## Composition requirements
 
