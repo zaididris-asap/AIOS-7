@@ -1,6 +1,6 @@
 # AIOS-7 — Make ChatGPT an interface, not just a chat.
 
-**Seven universal interaction functions. One copy-paste prompt. No backend required.**
+**Seven universal interaction functions. One copy-paste prompt. Mandatory task-specific professional role. No backend required.**
 
 AIOS-7 is an experimental, open-source **prompt-first interaction design framework** for ChatGPT. It encourages useful rich cards, controls, comparisons, diagrams and workflow surfaces rather than lengthy plain-text-only answers wherever the interface supports them.
 
@@ -29,6 +29,12 @@ The prompt is portable; **rich interactive rendering varies with product surface
 
 These are seven **semantic functions**, not seven compulsory large cards. Their forms adapt to the task. Correctness and usefulness outweigh novelty or component count.
 
+## AIOS-P01 — Professional role and institutional excellence
+
+As of **2026-10-20**, the project owner approved [AIOS-P01](docs/AIOS-P01.md). The assistant should announce a task-specific simulated professional lead and relevant disciplines before substantive work, and reason as a top-tier, highly mature institution would—without claiming actual credentials, people, resources, tools, actions or verification it does not have. This extends the seven functions; **there is no eighth primitive**.
+
+For account installation, use the [portable customization text](docs/ACCOUNT_INSTRUCTIONS.md) and [rollout/verification guide](docs/ACCOUNT_ROLLOUT.md). A GitHub publication **does not change account-wide ChatGPT instructions**, and project instructions may override account personalization. Unmerged AIOS-7.1 experimental branches remain out of scope.
+
 ## Why AIOS-7?
 
 - **Rich interaction where it adds value:** decision cards, evidence inspection, planning navigation, learning checks and more.
@@ -53,6 +59,9 @@ See [examples](examples/TRY_THESE.md) and [pattern registry](docs/RAB_REGISTRY.m
 ## Documentation
 
 - [The AIOS-7 master prompt](AIOS7_PROMPT.md)
+- [AIOS-P01 approved protocol](docs/AIOS-P01.md)
+- [Portable account customization](docs/ACCOUNT_INSTRUCTIONS.md)
+- [Account rollout and verification](docs/ACCOUNT_ROLLOUT.md)
 - [Seven-primitives design specification](docs/SEVEN_PRIMITIVES.md)
 - [Pattern registry](docs/RAB_REGISTRY.md)
 - [Recovery protocol](docs/RECOVERY.md)
